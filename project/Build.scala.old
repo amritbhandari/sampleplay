@@ -1,0 +1,26 @@
+import sbt._
+import Keys._
+import play.Play.autoImport._
+import PlayKeys._
+
+import com.typesafe.sbt.less.Import._
+import LessKeys._
+
+
+object ApplicationBuild extends Build {
+
+    val appName         = "playjavaamrit"
+    val appVersion      = "0.1"
+
+    val appDependencies = Seq(
+      javaJdbc,
+      javaEbean,
+      cache,
+      javaWs
+    )
+
+    val main = Project(appName, file(".")).enablePlugins(play.PlayJava).settings(
+      version := appVersion,
+      libraryDependencies ++= appDependencies
+    )
+}

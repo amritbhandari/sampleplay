@@ -1,0 +1,7 @@
+---
+applications:
+- name: playjavaamrit
+  memory: 256M
+  instances: 1
+  host: playjavaamrit
+  path: target/universal/playjavaamrit-0.1.zip
