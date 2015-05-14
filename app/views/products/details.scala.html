@@ -3,6 +3,15 @@
 @import helper.twitterBootstrap._
 
 @main("Product form") {
+  <link rel="stylesheet" media="screen" href="@routes.Assets.at("bootstrap/css/bootstrap.min.css")">
+  
+  @if(flash.containsKey("success")) {
+    <div class="alert alert-success">@flash.get("success")</div>
+  }
+  @if(flash.containsKey("error")) {
+    <div class="alert alert-danger">@flash.get("error")</div>
+  }
+
   <h1>Product form</h1>
   @helper.form(action = routes.Products.save()) {
     <fieldset>
@@ -11,7 +20,7 @@
       @helper.inputText(productForm("name"),'_label -> "Name")
       @helper.textarea(productForm("description"), '_label -> "Description")
     </fieldset>
-      <input type="submit" class="btn btn-primary" value="Save">
+    <input type="submit" class="btn btn-primary" value="Save">
     <a class="btn" href="@routes.Application.index()">Cancel</a>
   }
 }

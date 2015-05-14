@@ -1,5 +1,3 @@
-import de.johoop.findbugs4sbt.FindBugs._
-
 name := """playjavaamrit"""
 
 version := "0.1"
@@ -14,6 +12,3 @@ libraryDependencies ++= Seq(
   cache,
   javaWs
 )
-
-
-findbugsSettings
